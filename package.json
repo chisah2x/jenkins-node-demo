@@ -9,7 +9,7 @@
     "lint": "eslint src tests",
     "test": "jest",
     "test:ci": "JEST_JUNIT_OUTPUT_DIR=reports/junit JEST_JUNIT_OUTPUT_NAME=junit.xml jest --ci --coverage --reporters=default --reporters=jest-junit",
-    "build": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true });\" && esbuild src/server.js --bundle --platform=node --packages=external --outfile=dist/server.js"
+    "build": "rm -rf dist && esbuild src/server.js --bundle --platform=node --packages=external --outfile=dist/server.js"
   },
   "keywords": [],
   "author": "",
